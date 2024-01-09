@@ -274,7 +274,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top right no-repeat;
+  #background: url("../img/hero-bg.jpg") top right no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -1206,4 +1206,73 @@ section {
 
 #footer .credits {
   font-size: 13px;
+}
+
+#terminal {
+  width: 100%;
+  max-height: 30vh;
+  overflow: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #1e1e1e;
+  align center;
+  text-align: left;
+  color: green;
+  white-space: pre-wrap;
+
+}
+
+
+#terminal2 {
+  #terminal {
+    width: 80%;
+    max-width: 600px;
+    border: 1px solid #5c5c5c;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  #input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #1e1e1e;
+    color: green;
+    box-sizing: border-box;
+  }
+
+  #output {
+    padding: 10px;
+    color: green;
+    background-color: #1e1e1e;
+    white-space: pre-wrap;
+    white-space: pre-wrap;
+    text-align: left;
+  }
+}
+
+.terminal-container {
+  border-top: 28px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 16px;
+  height: 16px;
+  border: none;
+  background: #333;
+  border-radius: 5px;
+  cursor: default;
+  /* Remove pointer cursor */
+}
+
+.button:hover {
+  background: #444;
 }

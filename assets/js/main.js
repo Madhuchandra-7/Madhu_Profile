@@ -5,7 +5,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -91,7 +91,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('body').classList.toggle('mobile-nav-active')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -100,7 +100,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function(e) {
+  on('click', '.scrollto', function (e) {
     if (select(this.hash)) {
       e.preventDefault()
 
@@ -160,7 +160,7 @@
     new Waypoint({
       element: skilsContent,
       offset: '80%',
-      handler: function(direction) {
+      handler: function (direction) {
         let progress = select('.progress .progress-bar', true);
         progress.forEach((el) => {
           el.style.width = el.getAttribute('aria-valuenow') + '%'
@@ -181,9 +181,9 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#portfolio-flters li', function (e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        portfolioFilters.forEach(function (el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
@@ -191,7 +191,7 @@
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
-        portfolioIsotope.on('arrangeComplete', function() {
+        portfolioIsotope.on('arrangeComplete', function () {
           AOS.refresh()
         });
       }, true);
@@ -267,4 +267,74 @@
    */
   new PureCounter();
 
+  function typeText(text, element, speed = 100) {
+    return new Promise((resolve) => {
+      let i = 0;
+      const timer = setInterval(() => {
+        element.innerHTML += text[i];
+        i++;
+        if (i === text.length) {
+          clearInterval(timer);
+          resolve();
+        }
+      }, speed);
+    });
+  }
+
+  async function runTerminal() {
+    const terminal = document.getElementById('output');
+    await typeText('>>Welcome to my interactive terminal!\n', terminal);
+    await typeText('>>Enter the below commands to know more about me!\n', terminal);
+    await typeText('>>ls Madhu.about', terminal);
+  }
+
+  runTerminal();
+
+  const randomNumber = Math.floor(Math.random() * 2) + 1;
+  const backgroundImage = "url(../MyResume/assets/img/hero-bg" + randomNumber + ".jpg) top right no-repeat";
+  document.getElementById("hero").style.background = backgroundImage;
+
 })()
+document.addEventListener("DOMContentLoaded", function () {
+  const outputDiv = document.getElementById("output");
+  const inputField = document.getElementById("input");
+
+  inputField.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      const input = inputField.value;
+      inputField.value = "";
+
+      processCommand(input);
+    }
+  });
+
+  function processCommand(command) {
+    if (command === "ls Madhu.about" || command === "ls madhu.about") {
+      // Simulate detailed information about Madhu
+      const details = `
+            Name: Madhu chandra
+            Education: Bachelor of Technology
+            University: Jain University,Bangalore.
+            DOB: March 26th, 2002
+            Occupation: Developer
+            Hobbies: Coding, Reading, backpacking etc
+          `;
+
+
+      appendToTerminal(details);
+    } else {
+      // Default behavior for other commands
+      appendToTerminal("Command not recognized: Try ls Madhu.about");
+    }
+  }
+
+  function appendToTerminal(output) {
+    const newOutput = document.createElement("div");
+    newOutput.textContent = '$ ' + output;
+    outputDiv.appendChild(newOutput);
+
+    // Scroll to the bottom to show the latest output
+    outputDiv.scrollTop = outputDiv.scrollHeight;
+  }
+});
