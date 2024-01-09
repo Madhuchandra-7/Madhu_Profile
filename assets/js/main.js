@@ -290,9 +290,9 @@
 
   runTerminal();
 
-  const randomNumber = Math.floor(Math.random() * 2) + 1;
-  const backgroundImage = "url(../MyResume/assets/img/hero-bg" + randomNumber + ".jpg) top right no-repeat";
-  document.getElementById("hero").style.background = backgroundImage;
+  //const randomNumber = Math.floor(Math.random() * 2) + 1;
+  //const backgroundImage = "url(../MyResume/assets/img/hero-bg" + randomNumber + ".jpg) top right no-repeat";
+  //document.getElementById("hero").style.background = backgroundImage;
 
 })()
 document.addEventListener("DOMContentLoaded", function () {
