@@ -318,7 +318,7 @@ document.addEventListener("DOMContentLoaded", function () {
             University: Jain University,Bangalore.
             DOB: March 26th, 2002
             Occupation: Developer
-            Hobbies: Coding, Reading, backpacking etc
+            Hobbies: Paragliding, Trekking, Solo backpacking etc
           `;
 
 
