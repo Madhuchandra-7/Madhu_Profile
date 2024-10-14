@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
             Education: Bachelor of Technology
             University: Jain University,Bangalore.
             DOB: March 26th, 2002
-            Occupation: Developer
+            Occupation: ML Data Associate II, Amazon Web Services.
             Hobbies: Paragliding, Trekking, Solo backpacking etc
           `;
 
