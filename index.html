@@ -1170,6 +1170,13 @@
 </footer>
 
 <script>
+  // Force scroll to top on every reload
+  history.scrollRestoration = 'manual';
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }, 0);
+  });
   // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
