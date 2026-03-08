@@ -821,24 +821,31 @@
 
   /* RESPONSIVE */
   /* TABLET - iPad */
-@media (max-width: 1024px) {
+  @media (max-width: 1024px) {
   nav { padding: 16px 32px; }
-  #hero { padding: 120px 32px 60px; }
-  
+
+  #hero {
+    padding: 100px 32px 48px;
+    min-height: auto;
+    justify-content: center;
+  }
+
   h1 {
-    font-size: clamp(60px, 10vw, 100px);
+    font-size: clamp(56px, 9vw, 90px);
     letter-spacing: -2px;
+    line-height: 0.9;
   }
 
   .hero-bg-text {
-    font-size: clamp(100px, 18vw, 200px);
+    font-size: clamp(90px, 16vw, 180px);
     letter-spacing: -6px;
   }
 
-  #about {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
+  .hero-top-line { margin-bottom: 24px; }
+
+  .hero-bottom { margin-top: 24px; gap: 20px; }
+
+  #about { grid-template-columns: 1fr; gap: 48px; }
 
   .projects-grid { grid-template-columns: 1fr; }
 
@@ -846,68 +853,109 @@
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
   body { cursor: auto; }
   .cursor, .cursor-ring { display: none; }
 
-  nav { padding: 16px 24px; }
-  .nav-links, .nav-cta { display: none; }
+  nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
 
-  #hero { padding: 100px 24px 60px; min-height: 100svh; }
+  #hero {
+    padding: 80px 20px 40px;
+    min-height: auto;
+    height: auto;
+    justify-content: flex-start;
+  }
+
+  .hero-bg-text {
+    font-size: clamp(70px, 20vw, 120px);
+    letter-spacing: -3px;
+    top: 35%;
+    opacity: 0.8;
+  }
+
+  .hero-top-line {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+  }
+
+  .hero-location {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+
+  .hero-badge { font-size: 9px; padding: 6px 10px; letter-spacing: 1px; }
 
   h1 {
-    font-size: clamp(52px, 14vw, 80px);
+    font-size: clamp(48px, 13vw, 72px);
     letter-spacing: -1px;
-    line-height: 0.92;
+    line-height: 0.9;
   }
 
   h1 .line2 { -webkit-text-stroke: 1.5px var(--red); }
 
-  .hero-bg-text {
-    font-size: clamp(80px, 22vw, 140px);
-    letter-spacing: -4px;
-    top: 40%;
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 20px;
   }
 
-  .hero-badge { font-size: 9px; padding: 6px 12px; }
+  .hero-desc {
+    font-size: 14px;
+    max-width: 100%;
+    line-height: 1.6;
+  }
 
-  .hero-location { font-size: 10px; letter-spacing: 1px; }
-
-  .hero-desc { font-size: 14px; max-width: 100%; }
-
-  .hero-bottom { margin-top: 28px; gap: 24px; }
+  .hero-actions {
+    width: 100%;
+    flex-direction: row;
+    gap: 10px;
+  }
 
   .btn-red, .btn-ghost {
-    padding: 13px 28px;
-    font-size: 13px;
+    padding: 12px 24px;
+    font-size: 12px;
+    flex: 1;
+    text-align: center;
   }
 
-  .ticker-item { font-size: 13px; padding: 0 24px; }
+  .ticker-item { font-size: 12px; padding: 0 20px; letter-spacing: 2px; }
 
-  section { padding: 64px 24px; }
+  section { padding: 56px 20px; }
 
-  h2 { font-size: clamp(36px, 9vw, 52px); margin-bottom: 40px; }
+  h2 { font-size: clamp(32px, 9vw, 48px); margin-bottom: 36px; }
 
-  #about { grid-template-columns: 1fr; gap: 40px; }
+  #about { grid-template-columns: 1fr; gap: 36px; padding: 56px 20px; }
 
+  .about-text p { font-size: 14px; }
   .stats-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
-  .stat-number { font-size: 40px; }
+  .stat-box { padding: 20px 16px; }
+  .stat-number { font-size: 36px; }
+  .stat-label { font-size: 11px; }
+  .info-key { width: 90px; font-size: 10px; }
+  .info-val { font-size: 13px; }
+  .info-row { padding: 14px 0; }
+  .skill-pill { padding: 8px 14px; font-size: 12px; }
+  .exp-card-header { padding: 20px; gap: 12px; }
+  .exp-card-body { padding: 0 20px 20px; }
+  .exp-role { font-size: 20px; }
+  .exp-period { font-size: 10px; }
+  .exp-arrow { width: 30px; height: 30px; font-size: 14px; }
+  .proj-card { padding: 28px 20px; }
+  .proj-title { font-size: 20px; }
+  .proj-num { font-size: 52px; }
+  #contact { padding: 64px 20px; }
+  #contact h2 { font-size: clamp(44px, 12vw, 72px); margin-bottom: 40px; }
+  .c-link { font-size: 14px; padding: 14px 0; }
+  .contact-tagline { text-align: left; font-size: 14px; max-width: 100%; }
+  .contact-bottom { flex-direction: column; align-items: flex-start; gap: 32px; }
 
-  .projects-grid { grid-template-columns: 1fr; }
-
-  .exp-card-header { padding: 24px; }
-  .exp-card-body { padding: 0 24px 24px; }
-  .exp-role { font-size: 22px; }
-
-  .proj-card { padding: 32px 24px; }
-
-  #contact { padding: 80px 24px; }
-  #contact h2 { font-size: clamp(48px, 12vw, 80px); }
-
-  .contact-bottom { flex-direction: column; align-items: flex-start; }
-  .contact-tagline { text-align: left; font-size: 15px; }
-
-  footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+  footer { padding: 20px; flex-direction: column; gap: 6px; text-align: center; }
 
   .corner-tl, .corner-br { display: none; }
 }
